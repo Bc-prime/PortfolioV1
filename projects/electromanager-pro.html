@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElectroManager Pro — Rodrigo Córdoba (Bc-prime)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="dot"></span>RC <span style="color:var(--text-dim); font-weight:400;">// Bc-prime</span></a>
+    <nav class="links">
+      <a href="../index.html#projects" data-i18n="nav.projects">Proyectos</a>
+      <a href="../index.html#contact" data-i18n="nav.contact">Contacto</a>
+    </nav>
+    <div class="controls">
+      <button class="switch mono" id="theme-switch" data-state="left" aria-label="Cambiar tema claro/oscuro"><span>☾</span><span>☼</span><span class="knob"></span></button>
+      <button class="switch mono" id="lang-switch" data-state="left" aria-label="Cambiar idioma"><span>ES</span><span>EN</span><span class="knob"></span></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="project-hero">
+    <a href="../index.html#projects" class="back-link">← <span data-i18n="back">Volver a proyectos</span></a>
+    <p class="eyebrow" data-i18n="eyebrow">SAAS · GESTIÓN DE CONTRATISTAS ELÉCTRICOS</p>
+    <h1 data-i18n="title">ElectroManager Pro</h1>
+    <p class="tagline" data-i18n="tagline">Sistema de gestión hecho a medida para un contratista eléctrico comercial y residencial en Florida, EE. UU. — del primer presupuesto al cierre de obra, todo en un solo lugar.</p>
+    <div class="project-meta">
+      <span class="tag"><span class="led"></span>Python 3.13</span>
+      <span class="tag"><span class="led"></span>Streamlit</span>
+      <span class="tag"><span class="led"></span>SQLite</span>
+      <span class="tag"><span class="led"></span>ReportLab</span>
+      <span class="tag"><span class="led"></span>Plotly</span>
+      <span class="tag"><span class="led"></span>Pandas</span>
+    </div>
+
+    <!-- ================= MEDIA STAGE =================
+         Modo actual: VIDEO. Para reemplazar el demo:
+         1) Subí tu archivo (ej: electromanager-demo.mp4) a esta misma carpeta "projects/".
+         2) Cambiá el src del <source> de abajo por el nombre de tu archivo.
+         3) Borrá el <div class="video-placeholder"> si ya tenés video real.
+
+         ¿Preferís mostrar capturas en vez de video? Reemplazá todo el bloque
+         <div class="video-frame">...</div> por el bloque de carrusel que dejamos
+         comentado más abajo (buscá "CARRUSEL ALTERNATIVO").
+    -->
+    <div class="media-stage">
+      <div class="video-frame">
+        <video controls poster="" style="display:none;">
+          <source src="electromanager-demo.mp4" type="video/mp4">
+        </video>
+        <div class="video-placeholder">
+          <div class="play-icon">▶</div>
+          <span data-i18n="video.placeholder">Video demo (60–90 seg) próximamente<br>Reemplazá este bloque por tu archivo .mp4</span>
+        </div>
+      </div>
+    </div>
+    <!-- CARRUSEL ALTERNATIVO (descomentar y borrar el video-frame de arriba si usás capturas)
+    <div class="media-stage">
+      <div class="carousel">
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="electromanager-01.jpg" alt="Dashboard"></div>
+          <div class="carousel-slide"><img src="electromanager-02.jpg" alt="Quote Builder"></div>
+          <div class="carousel-slide"><img src="electromanager-03.jpg" alt="Blueprint Estimator"></div>
+        </div>
+        <button class="carousel-btn prev">‹</button>
+        <button class="carousel-btn next">›</button>
+        <div class="carousel-dots"></div>
+      </div>
+    </div>
+    -->
+  </section>
+
+  <div class="detail-grid">
+    <div>
+      <div class="detail-section">
+        <h2 data-i18n="problem.title">El problema</h2>
+        <p data-i18n="problem.p1">El cliente manejaba presupuestos, seguimiento de obra y facturación con planillas sueltas y papel. Calcular materiales para un proyecto nuevo implicaba visitar el plano y contar dispositivos a mano, un proceso lento y con margen de error.</p>
+      </div>
+
+      <div class="detail-section">
+        <h2 data-i18n="solution.title">La solución</h2>
+        <p data-i18n="solution.p1">Un sistema Python/Streamlit con seis módulos que acompañan todo el ciclo de vida de un proyecto eléctrico: desde la primera cotización hasta el cobro final. Corre en la nube y el cliente lo opera desde cualquier navegador, sin instalar nada.</p>
+      </div>
+
+      <div class="detail-section">
+        <h2 data-i18n="features.title">Funcionalidades clave</h2>
+        <ul class="feature-list">
+          <li><span class="led"></span><span><b data-i18n="f1.b">Quote Builder —</b> <span data-i18n="f1.t">genera presupuestos en PDF con alcance de trabajo, cronograma de pagos (30-40-20-10%), términos comerciales y firma.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f2.b">Job Tracker —</b> <span data-i18n="f2.t">seguimiento de presupuesto vs. real en cada obra, con alertas de desvío.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f3.b">Invoice Generator —</b> <span data-i18n="f3.t">facturación parcial con historial de pagos por proyecto.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f4.b">Materiales e inventario —</b> <span data-i18n="f4.t">control de stock con catálogo centralizado (sin duplicados).</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f5.b">Dashboard —</b> <span data-i18n="f5.t">panel oscuro con gráficos Plotly de estado general del negocio.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f6.b">Blueprint Estimator —</b> <span data-i18n="f6.t">calcula materiales y horas de mano de obra a partir del conteo de dispositivos, con fórmulas estándar NECA. Próximo paso: automatizar el conteo con Claude Vision API.</span></span></li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h2 data-i18n="challenges.title">Desafíos técnicos resueltos</h2>
+        <p data-i18n="challenges.p1">Catálogo de materiales que se duplicaba en cada recarga (seeding corriendo en cada rerun), generación de PDF lenta (resuelto disparándola solo por botón usando session_state), errores al borrar registros con relaciones (claves foráneas en cascada) y desalineaciones de layout en el PDF final.</p>
+      </div>
+    </div>
+
+    <aside class="side-panel">
+      <h3 data-i18n="side.title">Ficha del proyecto</h3>
+      <div class="side-row"><span data-i18n="side.client">Cliente</span><span data-i18n="side.client_v">Contratista eléctrico, Davie, FL (EE. UU.)</span></div>
+      <div class="side-row"><span data-i18n="side.scale">Escala de obra típica</span><span data-i18n="side.scale_v">~2.640 horas / 9-10 semanas</span></div>
+      <div class="side-row"><span data-i18n="side.crew">Cuadrilla</span><span data-i18n="side.crew_v">1 capataz, 3 oficiales, 2 ayudantes</span></div>
+      <div class="side-row"><span data-i18n="side.model">Modelo</span><span data-i18n="side.model_v">Setup $300 + $150/mes</span></div>
+      <div class="side-row"><span data-i18n="side.role">Mi rol</span><span data-i18n="side.role_v">Diseño, desarrollo y operación remota</span></div>
+    </aside>
+  </div>
+
+  <div style="margin:60px 0 100px; text-align:center;">
+    <a href="../index.html#contact" class="btn btn-primary" data-i18n="cta">¿Querés algo parecido para tu negocio? →</a>
+  </div>
+</main>
+
+<footer><span data-i18n="footer.text">Hecho con Python y mucho café · Rodrigo Córdoba (Bc-prime) · Buenos Aires</span></footer>
+
+<script>
+window.I18N = {
+  es: {
+    "nav.projects":"Proyectos","nav.contact":"Contacto","back":"Volver a proyectos",
+    "eyebrow":"SAAS · GESTIÓN DE CONTRATISTAS ELÉCTRICOS","title":"ElectroManager Pro",
+    "tagline":"Sistema de gestión hecho a medida para un contratista eléctrico comercial y residencial en Florida, EE. UU. — del primer presupuesto al cierre de obra, todo en un solo lugar.",
+    "video.placeholder":"Video demo (60–90 seg) próximamente<br>Reemplazá este bloque por tu archivo .mp4",
+    "problem.title":"El problema",
+    "problem.p1":"El cliente manejaba presupuestos, seguimiento de obra y facturación con planillas sueltas y papel. Calcular materiales para un proyecto nuevo implicaba visitar el plano y contar dispositivos a mano, un proceso lento y con margen de error.",
+    "solution.title":"La solución",
+    "solution.p1":"Un sistema Python/Streamlit con seis módulos que acompañan todo el ciclo de vida de un proyecto eléctrico: desde la primera cotización hasta el cobro final. Corre en la nube y el cliente lo opera desde cualquier navegador, sin instalar nada.",
+    "features.title":"Funcionalidades clave",
+    "f1.b":"Quote Builder —","f1.t":"genera presupuestos en PDF con alcance de trabajo, cronograma de pagos (30-40-20-10%), términos comerciales y firma.",
+    "f2.b":"Job Tracker —","f2.t":"seguimiento de presupuesto vs. real en cada obra, con alertas de desvío.",
+    "f3.b":"Invoice Generator —","f3.t":"facturación parcial con historial de pagos por proyecto.",
+    "f4.b":"Materiales e inventario —","f4.t":"control de stock con catálogo centralizado (sin duplicados).",
+    "f5.b":"Dashboard —","f5.t":"panel oscuro con gráficos Plotly de estado general del negocio.",
+    "f6.b":"Blueprint Estimator —","f6.t":"calcula materiales y horas de mano de obra a partir del conteo de dispositivos, con fórmulas estándar NECA. Próximo paso: automatizar el conteo con Claude Vision API.",
+    "challenges.title":"Desafíos técnicos resueltos",
+    "challenges.p1":"Catálogo de materiales que se duplicaba en cada recarga (seeding corriendo en cada rerun), generación de PDF lenta (resuelto disparándola solo por botón usando session_state), errores al borrar registros con relaciones (claves foráneas en cascada) y desalineaciones de layout en el PDF final.",
+    "side.title":"Ficha del proyecto",
+    "side.client":"Cliente","side.client_v":"Contratista eléctrico, Davie, FL (EE. UU.)",
+    "side.scale":"Escala de obra típica","side.scale_v":"~2.640 horas / 9-10 semanas",
+    "side.crew":"Cuadrilla","side.crew_v":"1 capataz, 3 oficiales, 2 ayudantes",
+    "side.model":"Modelo","side.model_v":"Setup $300 + $150/mes",
+    "side.role":"Mi rol","side.role_v":"Diseño, desarrollo y operación remota",
+    "cta":"¿Querés algo parecido para tu negocio? →",
+    "footer.text":"Hecho con Python y mucho café · Rodrigo Córdoba (Bc-prime) · Buenos Aires"
+  },
+  en: {
+    "nav.projects":"Projects","nav.contact":"Contact","back":"Back to projects",
+    "eyebrow":"SAAS · ELECTRICAL CONTRACTOR MANAGEMENT","title":"ElectroManager Pro",
+    "tagline":"A custom management system for a commercial and residential electrical contractor in Florida, USA — from the first estimate to closing the job, all in one place.",
+    "video.placeholder":"Demo video (60–90 sec) coming soon<br>Replace this block with your .mp4 file",
+    "problem.title":"The problem",
+    "problem.p1":"The client managed estimates, job tracking and invoicing with loose spreadsheets and paper. Calculating materials for a new project meant visiting the blueprint and counting devices by hand — slow and error-prone.",
+    "solution.title":"The solution",
+    "solution.p1":"A Python/Streamlit system with six modules covering the whole lifecycle of an electrical project: from the first quote to the final payment. It runs in the cloud, so the client operates it from any browser, no install needed.",
+    "features.title":"Key features",
+    "f1.b":"Quote Builder —","f1.t":"generates PDF estimates with scope of work, payment schedule (30-40-20-10%), commercial terms and signature line.",
+    "f2.b":"Job Tracker —","f2.t":"budget vs. actual tracking on every job, with variance alerts.",
+    "f3.b":"Invoice Generator —","f3.t":"partial billing with a full payment history per project.",
+    "f4.b":"Materials & inventory —","f4.t":"stock control with a centralized, de-duplicated catalog.",
+    "f5.b":"Dashboard —","f5.t":"dark-theme panel with Plotly charts of overall business health.",
+    "f6.b":"Blueprint Estimator —","f6.t":"calculates materials and labor hours from device counts, using NECA-standard formulas. Next step: automating the count with the Claude Vision API.",
+    "challenges.title":"Technical challenges solved",
+    "challenges.p1":"A materials catalog that duplicated on every reload (seeding running on every rerun), slow PDF generation (fixed by triggering it only on button click via session_state), cascading delete errors on related records (foreign keys), and PDF layout misalignment.",
+    "side.title":"Project snapshot",
+    "side.client":"Client","side.client_v":"Electrical contractor, Davie, FL (USA)",
+    "side.scale":"Typical job scale","side.scale_v":"~2,640 man-hours / 9-10 weeks",
+    "side.crew":"Crew","side.crew_v":"1 foreman, 3 journeymen, 2 helpers",
+    "side.model":"Business model","side.model_v":"$300 setup + $150/mo",
+    "side.role":"My role","side.role_v":"Design, development & remote operation",
+    "cta":"Want something like this for your business? →",
+    "footer.text":"Made with Python and a lot of coffee · Rodrigo Córdoba (Bc-prime) · Buenos Aires"
+  }
+};
+</script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

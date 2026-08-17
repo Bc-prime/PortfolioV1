@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budget Calculator — Rodrigo Córdoba (Bc-prime)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="dot"></span>RC <span style="color:var(--text-dim); font-weight:400;">// Bc-prime</span></a>
+    <nav class="links">
+      <a href="../index.html#projects" data-i18n="nav.projects">Proyectos</a>
+      <a href="../index.html#contact" data-i18n="nav.contact">Contacto</a>
+    </nav>
+    <div class="controls">
+      <button class="switch mono" id="theme-switch" data-state="left" aria-label="Cambiar tema claro/oscuro"><span>☾</span><span>☼</span><span class="knob"></span></button>
+      <button class="switch mono" id="lang-switch" data-state="left" aria-label="Cambiar idioma"><span>ES</span><span>EN</span><span class="knob"></span></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="project-hero">
+    <a href="../index.html#projects" class="back-link">← <span data-i18n="back">Volver a proyectos</span></a>
+    <p class="eyebrow" data-i18n="eyebrow">HERRAMIENTA DE ESCRITORIO · PRICING</p>
+    <h1 data-i18n="title">Budget Calculator</h1>
+    <p class="tagline" data-i18n="tagline">Una app de escritorio para que freelancers y estudios chicos coticen proyectos con un método claro de precios basados en valor, en vez de tirar un número "al ojo".</p>
+    <div class="project-meta">
+      <span class="tag"><span class="led"></span>Python</span>
+      <span class="tag"><span class="led"></span>CustomTkinter</span>
+      <span class="tag"><span class="led"></span>PyInstaller</span>
+      <span class="tag"><span class="led"></span>GitHub Actions</span>
+    </div>
+
+    <div class="media-stage">
+      <div class="video-frame">
+        <video controls poster="" style="display:none;">
+          <source src="budget-calculator-demo.mp4" type="video/mp4">
+        </video>
+        <div class="video-placeholder">
+          <div class="play-icon">▶</div>
+          <span data-i18n="video.placeholder">Video demo próximamente<br>Reemplazá este bloque por tu archivo .mp4</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="detail-grid">
+    <div>
+      <div class="detail-section">
+        <h2 data-i18n="problem.title">El problema</h2>
+        <p data-i18n="problem.p1">Cotizar "a ojo" es uno de los errores más comunes de freelancers que arrancan: subestiman el tiempo real de un proyecto y terminan cobrando menos de lo que deberían.</p>
+      </div>
+
+      <div class="detail-section">
+        <h2 data-i18n="solution.title">La solución</h2>
+        <p data-i18n="solution.p1">Una calculadora de escritorio con una interfaz simple donde el freelancer ingresa el alcance del proyecto y obtiene un precio sugerido basado en valor, con una capa de optimización de tiempos asistida por IA para ajustar la estimación.</p>
+      </div>
+
+      <div class="detail-section">
+        <h2 data-i18n="features.title">Funcionalidades clave</h2>
+        <ul class="feature-list">
+          <li><span class="led"></span><span><b data-i18n="f1.b">Pricing basado en valor —</b> <span data-i18n="f1.t">calcula un precio sugerido a partir del alcance y la complejidad, no solo de horas.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f2.b">Optimización de tiempos con IA —</b> <span data-i18n="f2.t">ajusta la estimación de horas según el tipo de tarea.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f3.b">Interfaz nativa —</b> <span data-i18n="f3.t">construida con CustomTkinter, con diseño responsive dentro de un frame con scroll.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f4.b">Distribución automática —</b> <span data-i18n="f4.t">pipeline de CI/CD con GitHub Actions que compila ejecutables para Windows y Linux con cada versión nueva.</span></span></li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h2 data-i18n="challenges.title">Desafíos técnicos resueltos</h2>
+        <p data-i18n="challenges.p1">El layout no se adaptaba bien a distintos tamaños de ventana dentro de un frame scrolleable; se resolvió migrando de <code>.grid()</code> a <code>.pack()</code> dentro del <code>CTkScrollableFrame</code>. Además, se automatizó la generación de releases: cada tag de versión dispara un build que compila el ejecutable con PyInstaller y lo publica como GitHub Release.</p>
+      </div>
+    </div>
+
+    <aside class="side-panel">
+      <h3 data-i18n="side.title">Ficha del proyecto</h3>
+      <div class="side-row"><span data-i18n="side.type">Tipo</span><span data-i18n="side.type_v">Proyecto de portfolio</span></div>
+      <div class="side-row"><span data-i18n="side.platform">Plataforma</span><span data-i18n="side.platform_v">Windows y Linux (.exe / binario)</span></div>
+      <div class="side-row"><span data-i18n="side.cicd">CI/CD</span><span data-i18n="side.cicd_v">GitHub Actions → GitHub Releases</span></div>
+      <div class="side-row"><span data-i18n="side.role">Mi rol</span><span data-i18n="side.role_v">Diseño y desarrollo end-to-end</span></div>
+    </aside>
+  </div>
+
+  <div style="margin:60px 0 100px; text-align:center;">
+    <a href="../index.html#contact" class="btn btn-primary" data-i18n="cta">¿Necesitás cotizar mejor tus proyectos? →</a>
+  </div>
+</main>
+
+<footer><span data-i18n="footer.text">Hecho con Python y mucho café · Rodrigo Córdoba (Bc-prime) · Buenos Aires</span></footer>
+
+<script>
+window.I18N = {
+  es: {
+    "nav.projects":"Proyectos","nav.contact":"Contacto","back":"Volver a proyectos",
+    "eyebrow":"HERRAMIENTA DE ESCRITORIO · PRICING","title":"Budget Calculator",
+    "tagline":"Una app de escritorio para que freelancers y estudios chicos coticen proyectos con un método claro de precios basados en valor, en vez de tirar un número \"al ojo\".",
+    "video.placeholder":"Video demo próximamente<br>Reemplazá este bloque por tu archivo .mp4",
+    "problem.title":"El problema",
+    "problem.p1":"Cotizar \"a ojo\" es uno de los errores más comunes de freelancers que arrancan: subestiman el tiempo real de un proyecto y terminan cobrando menos de lo que deberían.",
+    "solution.title":"La solución",
+    "solution.p1":"Una calculadora de escritorio con una interfaz simple donde el freelancer ingresa el alcance del proyecto y obtiene un precio sugerido basado en valor, con una capa de optimización de tiempos asistida por IA para ajustar la estimación.",
+    "features.title":"Funcionalidades clave",
+    "f1.b":"Pricing basado en valor —","f1.t":"calcula un precio sugerido a partir del alcance y la complejidad, no solo de horas.",
+    "f2.b":"Optimización de tiempos con IA —","f2.t":"ajusta la estimación de horas según el tipo de tarea.",
+    "f3.b":"Interfaz nativa —","f3.t":"construida con CustomTkinter, con diseño responsive dentro de un frame con scroll.",
+    "f4.b":"Distribución automática —","f4.t":"pipeline de CI/CD con GitHub Actions que compila ejecutables para Windows y Linux con cada versión nueva.",
+    "challenges.title":"Desafíos técnicos resueltos",
+    "challenges.p1":"El layout no se adaptaba bien a distintos tamaños de ventana dentro de un frame scrolleable; se resolvió migrando de .grid() a .pack() dentro del CTkScrollableFrame. Además, se automatizó la generación de releases: cada tag de versión dispara un build que compila el ejecutable con PyInstaller y lo publica como GitHub Release.",
+    "side.title":"Ficha del proyecto",
+    "side.type":"Tipo","side.type_v":"Proyecto de portfolio",
+    "side.platform":"Plataforma","side.platform_v":"Windows y Linux (.exe / binario)",
+    "side.cicd":"CI/CD","side.cicd_v":"GitHub Actions → GitHub Releases",
+    "side.role":"Mi rol","side.role_v":"Diseño y desarrollo end-to-end",
+    "cta":"¿Necesitás cotizar mejor tus proyectos? →",
+    "footer.text":"Hecho con Python y mucho café · Rodrigo Córdoba (Bc-prime) · Buenos Aires"
+  },
+  en: {
+    "nav.projects":"Projects","nav.contact":"Contact","back":"Back to projects",
+    "eyebrow":"DESKTOP TOOL · PRICING","title":"Budget Calculator",
+    "tagline":"A desktop app for freelancers and small studios to quote projects with a clear value-based pricing method, instead of guessing a number.",
+    "video.placeholder":"Demo video coming soon<br>Replace this block with your .mp4 file",
+    "problem.title":"The problem",
+    "problem.p1":"Quoting by gut feeling is one of the most common mistakes freelancers make when starting out: they underestimate the real time a project takes and end up charging less than they should.",
+    "solution.title":"The solution",
+    "solution.p1":"A desktop calculator with a simple interface where the freelancer enters the project scope and gets a suggested value-based price, with an AI-assisted time-optimization layer to refine the estimate.",
+    "features.title":"Key features",
+    "f1.b":"Value-based pricing —","f1.t":"calculates a suggested price from scope and complexity, not just hours.",
+    "f2.b":"AI time optimization —","f2.t":"adjusts the hour estimate based on the type of task.",
+    "f3.b":"Native interface —","f3.t":"built with CustomTkinter, with a responsive layout inside a scrollable frame.",
+    "f4.b":"Automatic distribution —","f4.t":"a GitHub Actions CI/CD pipeline that builds Windows and Linux executables on every new version tag.",
+    "challenges.title":"Technical challenges solved",
+    "challenges.p1":"The layout didn't adapt well to different window sizes inside a scrollable frame; fixed by switching from .grid() to .pack() inside the CTkScrollableFrame. Release generation was also automated: every version tag triggers a build that compiles the executable with PyInstaller and publishes it as a GitHub Release.",
+    "side.title":"Project snapshot",
+    "side.type":"Type","side.type_v":"Portfolio project",
+    "side.platform":"Platform","side.platform_v":"Windows and Linux (.exe / binary)",
+    "side.cicd":"CI/CD","side.cicd_v":"GitHub Actions → GitHub Releases",
+    "side.role":"My role","side.role_v":"End-to-end design & development",
+    "cta":"Need to quote your projects better? →",
+    "footer.text":"Made with Python and a lot of coffee · Rodrigo Córdoba (Bc-prime) · Buenos Aires"
+  }
+};
+</script>
+<script src="../assets/app.js"></script>
+</body>
+</html>
