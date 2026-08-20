@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VRP Optimizer — Rodrigo Córdoba (Bc-prime)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="dot"></span>RC <span style="color:var(--text-dim); font-weight:400;">// Bc-prime</span></a>
+    <nav class="links">
+      <a href="../index.html#projects" data-i18n="nav.projects">Proyectos</a>
+      <a href="../index.html#contact" data-i18n="nav.contact">Contacto</a>
+    </nav>
+    <div class="controls">
+      <button class="switch mono" id="theme-switch" data-state="left" aria-label="Cambiar tema claro/oscuro"><span>☾</span><span>☼</span><span class="knob"></span></button>
+      <button class="switch mono" id="lang-switch" data-state="left" aria-label="Cambiar idioma"><span>ES</span><span>EN</span><span class="knob"></span></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="project-hero">
+    <a href="../index.html#projects" class="back-link">← <span data-i18n="back">Volver a proyectos</span></a>
+    <p class="eyebrow" data-i18n="eyebrow">LOGÍSTICA · OPTIMIZACIÓN DE RUTAS</p>
+    <h1 data-i18n="title">VRP Optimizer</h1>
+    <p class="tagline" data-i18n="tagline">Un optimizador de rutas de reparto pensado para el mundo de la logística de última milla: calcula las rutas más eficientes para una flota y las muestra en un mapa interactivo.</p>
+    <div class="project-meta">
+      <span class="tag"><span class="led"></span>Python</span>
+      <span class="tag"><span class="led"></span>OR-Tools</span>
+      <span class="tag"><span class="led"></span>OSRM</span>
+      <span class="tag"><span class="led"></span>Nominatim</span>
+      <span class="tag"><span class="led"></span>Streamlit</span>
+      <span class="tag"><span class="led"></span>Folium</span>
+      <span class="tag"><span class="led"></span>pytest</span>
+    </div>
+
+    <!-- MEDIA STAGE — reemplazá el .mp4 por tu archivo real en esta carpeta -->
+    <div class="media-stage">
+      <div class="video-frame">
+        <video controls poster="" style="display:none;">
+          <source src="vrp-optimizer-demo.mp4" type="video/mp4">
+        </video>
+        <div class="video-placeholder">
+          <div class="play-icon">▶</div>
+          <span data-i18n="video.placeholder">Video demo próximamente<br>Reemplazá este bloque por tu archivo .mp4</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="detail-grid">
+    <div>
+      <div class="detail-section">
+        <h2 data-i18n="problem.title">El problema</h2>
+        <p data-i18n="problem.p1">Armar rutas de reparto a mano (o con criterio geográfico intuitivo) desperdicia kilómetros, horas de conductor y combustible. En logística de última milla, cada ruta mal optimizada se multiplica todos los días.</p>
+      </div>
+
+      <div class="detail-section">
+        <h2 data-i18n="solution.title">La solución</h2>
+        <p data-i18n="solution.p1">Un motor de ruteo que toma un conjunto de direcciones de entrega, las geocodifica y calcula el recorrido más eficiente para la flota disponible usando programación con restricciones (Vehicle Routing Problem). El resultado se visualiza en un mapa interactivo, no en una tabla.</p>
+      </div>
+
+      <div class="detail-section">
+        <h2 data-i18n="features.title">Funcionalidades clave</h2>
+        <ul class="feature-list">
+          <li><span class="led"></span><span><b data-i18n="f1.b">Motor de ruteo —</b> <span data-i18n="f1.t">Google OR-Tools calcula las rutas óptimas según cantidad de vehículos y restricciones de capacidad.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f2.b">Distancias reales —</b> <span data-i18n="f2.t">integración con OSRM para tiempos y distancias por calle, con cálculo de distancia en línea recta (Haversine) como respaldo si el servicio no responde.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f3.b">Geocodificación —</b> <span data-i18n="f3.t">conversión automática de direcciones a coordenadas vía Nominatim.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f4.b">Dashboard interactivo —</b> <span data-i18n="f4.t">mapa Folium embebido en Streamlit, con cada ruta y parada visibles de un vistazo.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f5.b">Cobertura de tests —</b> <span data-i18n="f5.t">suite de 9 tests con pytest para validar el cálculo de rutas.</span></span></li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h2 data-i18n="challenges.title">Desafíos técnicos resueltos</h2>
+        <p data-i18n="challenges.p1">El mapa desaparecía al interactuar con otros controles de la interfaz por un problema de ciclo de vida de componentes en Streamlit; se resolvió persistiendo el estado del mapa correctamente con session_state.</p>
+      </div>
+    </div>
+
+    <aside class="side-panel">
+      <h3 data-i18n="side.title">Ficha del proyecto</h3>
+      <div class="side-row"><span data-i18n="side.type">Tipo</span><span data-i18n="side.type_v">Proyecto de portfolio</span></div>
+      <div class="side-row"><span data-i18n="side.target">Enfoque</span><span data-i18n="side.target_v">Logística de última milla</span></div>
+      <div class="side-row"><span data-i18n="side.tests">Tests</span><span data-i18n="side.tests_v">9/9 pasando (pytest)</span></div>
+      <div class="side-row"><span data-i18n="side.role">Mi rol</span><span data-i18n="side.role_v">Diseño y desarrollo end-to-end</span></div>
+    </aside>
+  </div>
+
+  <div style="margin:60px 0 100px; text-align:center;">
+    <a href="../index.html#contact" class="btn btn-primary" data-i18n="cta">¿Necesitás optimizar rutas en tu negocio? →</a>
+  </div>
+</main>
+
+<footer><span data-i18n="footer.text">Hecho con Python y mucho café · Rodrigo Córdoba (Bc-prime) · Buenos Aires</span></footer>
+
+<script>
+window.I18N = {
+  es: {
+    "nav.projects":"Proyectos","nav.contact":"Contacto","back":"Volver a proyectos",
+    "eyebrow":"LOGÍSTICA · OPTIMIZACIÓN DE RUTAS","title":"VRP Optimizer",
+    "tagline":"Un optimizador de rutas de reparto pensado para el mundo de la logística de última milla: calcula las rutas más eficientes para una flota y las muestra en un mapa interactivo.",
+    "video.placeholder":"Video demo próximamente<br>Reemplazá este bloque por tu archivo .mp4",
+    "problem.title":"El problema",
+    "problem.p1":"Armar rutas de reparto a mano (o con criterio geográfico intuitivo) desperdicia kilómetros, horas de conductor y combustible. En logística de última milla, cada ruta mal optimizada se multiplica todos los días.",
+    "solution.title":"La solución",
+    "solution.p1":"Un motor de ruteo que toma un conjunto de direcciones de entrega, las geocodifica y calcula el recorrido más eficiente para la flota disponible usando programación con restricciones (Vehicle Routing Problem). El resultado se visualiza en un mapa interactivo, no en una tabla.",
+    "features.title":"Funcionalidades clave",
+    "f1.b":"Motor de ruteo —","f1.t":"Google OR-Tools calcula las rutas óptimas según cantidad de vehículos y restricciones de capacidad.",
+    "f2.b":"Distancias reales —","f2.t":"integración con OSRM para tiempos y distancias por calle, con cálculo de distancia en línea recta (Haversine) como respaldo si el servicio no responde.",
+    "f3.b":"Geocodificación —","f3.t":"conversión automática de direcciones a coordenadas vía Nominatim.",
+    "f4.b":"Dashboard interactivo —","f4.t":"mapa Folium embebido en Streamlit, con cada ruta y parada visibles de un vistazo.",
+    "f5.b":"Cobertura de tests —","f5.t":"suite de 9 tests con pytest para validar el cálculo de rutas.",
+    "challenges.title":"Desafíos técnicos resueltos",
+    "challenges.p1":"El mapa desaparecía al interactuar con otros controles de la interfaz por un problema de ciclo de vida de componentes en Streamlit; se resolvió persistiendo el estado del mapa correctamente con session_state.",
+    "side.title":"Ficha del proyecto",
+    "side.type":"Tipo","side.type_v":"Proyecto de portfolio",
+    "side.target":"Enfoque","side.target_v":"Logística de última milla",
+    "side.tests":"Tests","side.tests_v":"9/9 pasando (pytest)",
+    "side.role":"Mi rol","side.role_v":"Diseño y desarrollo end-to-end",
+    "cta":"¿Necesitás optimizar rutas en tu negocio? →",
+    "footer.text":"Hecho con Python y mucho café · Rodrigo Córdoba (Bc-prime) · Buenos Aires"
+  },
+  en: {
+    "nav.projects":"Projects","nav.contact":"Contact","back":"Back to projects",
+    "eyebrow":"LOGISTICS · ROUTE OPTIMIZATION","title":"VRP Optimizer",
+    "tagline":"A delivery route optimizer built for the last-mile logistics world: calculates the most efficient routes for a fleet and shows them on an interactive map.",
+    "video.placeholder":"Demo video coming soon<br>Replace this block with your .mp4 file",
+    "problem.title":"The problem",
+    "problem.p1":"Building delivery routes by hand (or by gut-feel geography) wastes miles, driver hours and fuel. In last-mile logistics, every poorly optimized route compounds day after day.",
+    "solution.title":"The solution",
+    "solution.p1":"A routing engine that takes a set of delivery addresses, geocodes them, and calculates the most efficient route for the available fleet using constraint programming (Vehicle Routing Problem). The result is shown on an interactive map, not a spreadsheet.",
+    "features.title":"Key features",
+    "f1.b":"Routing engine —","f1.t":"Google OR-Tools computes optimal routes based on fleet size and capacity constraints.",
+    "f2.b":"Real-world distances —","f2.t":"OSRM integration for street-level times and distances, with a straight-line Haversine fallback if the service is unavailable.",
+    "f3.b":"Geocoding —","f3.t":"automatic address-to-coordinates conversion via Nominatim.",
+    "f4.b":"Interactive dashboard —","f4.t":"a Folium map embedded in Streamlit, with every route and stop visible at a glance.",
+    "f5.b":"Test coverage —","f5.t":"a 9-test pytest suite validating the route calculations.",
+    "challenges.title":"Technical challenges solved",
+    "challenges.p1":"The map disappeared when interacting with other UI controls due to a Streamlit component lifecycle issue; fixed by properly persisting map state with session_state.",
+    "side.title":"Project snapshot",
+    "side.type":"Type","side.type_v":"Portfolio project",
+    "side.target":"Focus","side.target_v":"Last-mile logistics",
+    "side.tests":"Tests","side.tests_v":"9/9 passing (pytest)",
+    "side.role":"My role","side.role_v":"End-to-end design & development",
+    "cta":"Need to optimize routes in your business? →",
+    "footer.text":"Made with Python and a lot of coffee · Rodrigo Córdoba (Bc-prime) · Buenos Aires"
+  }
+};
+</script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

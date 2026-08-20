@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Automation Pack — Rodrigo Córdoba (Bc-prime)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="dot"></span>RC <span style="color:var(--text-dim); font-weight:400;">// Bc-prime</span></a>
+    <nav class="links">
+      <a href="../index.html#projects" data-i18n="nav.projects">Proyectos</a>
+      <a href="../index.html#contact" data-i18n="nav.contact">Contacto</a>
+    </nav>
+    <div class="controls">
+      <button class="switch mono" id="theme-switch" data-state="left" aria-label="Cambiar tema claro/oscuro"><span>☾</span><span>☼</span><span class="knob"></span></button>
+      <button class="switch mono" id="lang-switch" data-state="left" aria-label="Cambiar idioma"><span>ES</span><span>EN</span><span class="knob"></span></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="project-hero">
+    <a href="../index.html#projects" class="back-link">← <span data-i18n="back">Volver a proyectos</span></a>
+    <p class="eyebrow" data-i18n="eyebrow">SUITE DE AUTOMATIZACIÓN · PYMES</p>
+    <h1 data-i18n="title">Business Automation Pack</h1>
+    <p class="tagline" data-i18n="tagline">Una suite modular que junta en una sola app web todo lo que un pequeño negocio necesita para dejar de trabajar a mano: reportes, alertas, scraping y un asistente con IA.</p>
+    <div class="project-meta">
+      <span class="tag"><span class="led"></span>Python</span>
+      <span class="tag"><span class="led"></span>Pandas</span>
+      <span class="tag"><span class="led"></span>Streamlit</span>
+      <span class="tag"><span class="led"></span>Groq API</span>
+      <span class="tag"><span class="led"></span>LLaMA 3.3 70B</span>
+    </div>
+
+    <div class="media-stage">
+      <div class="video-frame">
+        <video controls poster="" style="display:none;">
+          <source src="business-automation-pack-demo.mp4" type="video/mp4">
+        </video>
+        <div class="video-placeholder">
+          <div class="play-icon">▶</div>
+          <span data-i18n="video.placeholder">Video demo próximamente<br>Reemplazá este bloque por tu archivo .mp4</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="detail-grid">
+    <div>
+      <div class="detail-section">
+        <h2 data-i18n="problem.title">El problema</h2>
+        <p data-i18n="problem.p1">Muchas pymes y negocios chicos hacen reportes de ventas a mano en Excel, no tienen alertas cuando se les acaba el stock y no aprovechan datos que ya tienen (precios de la competencia, gastos, ventas) porque están dispersos en varios archivos.</p>
+      </div>
+
+      <div class="detail-section">
+        <h2 data-i18n="solution.title">La solución</h2>
+        <p data-i18n="solution.p1">Una app Streamlit todo-en-uno que centraliza siete herramientas de automatización, pensada para que un dueño de negocio sin conocimientos técnicos pueda usarla desde el primer día.</p>
+      </div>
+
+      <div class="detail-section">
+        <h2 data-i18n="features.title">Módulos incluidos</h2>
+        <ul class="feature-list">
+          <li><span class="led"></span><span><b data-i18n="f1.b">Reportes de ventas —</b> <span data-i18n="f1.t">generación automática de reportes en Excel a partir de datos crudos.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f2.b">Web scraper —</b> <span data-i18n="f2.t">extracción periódica de precios u otros datos públicos de la competencia.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f3.b">Analítica e-commerce —</b> <span data-i18n="f3.t">panel con métricas clave de ventas online.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f4.b">Alertas de inventario —</b> <span data-i18n="f4.t">aviso automático cuando un producto está por agotarse.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f5.b">Análisis de ingresos y gastos —</b> <span data-i18n="f5.t">visualización clara de la salud financiera del negocio.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f6.b">Generador de presupuestos PDF —</b> <span data-i18n="f6.t">cotizaciones listas para enviar al cliente.</span></span></li>
+          <li><span class="led"></span><span><b data-i18n="f7.b">Asistente con IA —</b> <span data-i18n="f7.t">integrado con Groq (LLaMA 3.3 70B) para responder preguntas sobre el negocio en lenguaje natural.</span></span></li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h2 data-i18n="deploy.title">Despliegue</h2>
+        <p data-i18n="deploy.p1">La app está publicada en Streamlit Cloud, así que el usuario final la abre directamente desde un link, sin instalar Python ni ninguna dependencia.</p>
+      </div>
+    </div>
+
+    <aside class="side-panel">
+      <h3 data-i18n="side.title">Ficha del proyecto</h3>
+      <div class="side-row"><span data-i18n="side.type">Tipo</span><span data-i18n="side.type_v">Proyecto base / portfolio</span></div>
+      <div class="side-row"><span data-i18n="side.target">Enfoque</span><span data-i18n="side.target_v">Pequeños negocios y e-commerce</span></div>
+      <div class="side-row"><span data-i18n="side.deploy">Hosting</span><span data-i18n="side.deploy_v">Streamlit Cloud</span></div>
+      <div class="side-row"><span data-i18n="side.role">Mi rol</span><span data-i18n="side.role_v">Diseño y desarrollo end-to-end</span></div>
+    </aside>
+  </div>
+
+  <div style="margin:60px 0 100px; text-align:center;">
+    <a href="../index.html#contact" class="btn btn-primary" data-i18n="cta">¿Querés automatizar tu negocio? →</a>
+  </div>
+</main>
+
+<footer><span data-i18n="footer.text">Hecho con Python y mucho café · Rodrigo Córdoba (Bc-prime) · Buenos Aires</span></footer>
+
+<script>
+window.I18N = {
+  es: {
+    "nav.projects":"Proyectos","nav.contact":"Contacto","back":"Volver a proyectos",
+    "eyebrow":"SUITE DE AUTOMATIZACIÓN · PYMES","title":"Business Automation Pack",
+    "tagline":"Una suite modular que junta en una sola app web todo lo que un pequeño negocio necesita para dejar de trabajar a mano: reportes, alertas, scraping y un asistente con IA.",
+    "video.placeholder":"Video demo próximamente<br>Reemplazá este bloque por tu archivo .mp4",
+    "problem.title":"El problema",
+    "problem.p1":"Muchas pymes y negocios chicos hacen reportes de ventas a mano en Excel, no tienen alertas cuando se les acaba el stock y no aprovechan datos que ya tienen (precios de la competencia, gastos, ventas) porque están dispersos en varios archivos.",
+    "solution.title":"La solución",
+    "solution.p1":"Una app Streamlit todo-en-uno que centraliza siete herramientas de automatización, pensada para que un dueño de negocio sin conocimientos técnicos pueda usarla desde el primer día.",
+    "features.title":"Módulos incluidos",
+    "f1.b":"Reportes de ventas —","f1.t":"generación automática de reportes en Excel a partir de datos crudos.",
+    "f2.b":"Web scraper —","f2.t":"extracción periódica de precios u otros datos públicos de la competencia.",
+    "f3.b":"Analítica e-commerce —","f3.t":"panel con métricas clave de ventas online.",
+    "f4.b":"Alertas de inventario —","f4.t":"aviso automático cuando un producto está por agotarse.",
+    "f5.b":"Análisis de ingresos y gastos —","f5.t":"visualización clara de la salud financiera del negocio.",
+    "f6.b":"Generador de presupuestos PDF —","f6.t":"cotizaciones listas para enviar al cliente.",
+    "f7.b":"Asistente con IA —","f7.t":"integrado con Groq (LLaMA 3.3 70B) para responder preguntas sobre el negocio en lenguaje natural.",
+    "deploy.title":"Despliegue",
+    "deploy.p1":"La app está publicada en Streamlit Cloud, así que el usuario final la abre directamente desde un link, sin instalar Python ni ninguna dependencia.",
+    "side.title":"Ficha del proyecto",
+    "side.type":"Tipo","side.type_v":"Proyecto base / portfolio",
+    "side.target":"Enfoque","side.target_v":"Pequeños negocios y e-commerce",
+    "side.deploy":"Hosting","side.deploy_v":"Streamlit Cloud",
+    "side.role":"Mi rol","side.role_v":"Diseño y desarrollo end-to-end",
+    "cta":"¿Querés automatizar tu negocio? →",
+    "footer.text":"Hecho con Python y mucho café · Rodrigo Córdoba (Bc-prime) · Buenos Aires"
+  },
+  en: {
+    "nav.projects":"Projects","nav.contact":"Contact","back":"Back to projects",
+    "eyebrow":"AUTOMATION SUITE · SMALL BUSINESS","title":"Business Automation Pack",
+    "tagline":"A modular suite that brings together, in a single web app, everything a small business needs to stop working by hand: reports, alerts, scraping and an AI assistant.",
+    "video.placeholder":"Demo video coming soon<br>Replace this block with your .mp4 file",
+    "problem.title":"The problem",
+    "problem.p1":"Many small businesses build sales reports by hand in Excel, have no alerts when stock runs low, and don't use data they already have (competitor prices, expenses, sales) because it's scattered across different files.",
+    "solution.title":"The solution",
+    "solution.p1":"An all-in-one Streamlit app that centralizes seven automation tools, built so a non-technical business owner can use it from day one.",
+    "features.title":"Included modules",
+    "f1.b":"Sales reports —","f1.t":"automatic Excel report generation from raw data.",
+    "f2.b":"Web scraper —","f2.t":"periodic extraction of competitor prices or other public data.",
+    "f3.b":"E-commerce analytics —","f3.t":"a dashboard with key online-sales metrics.",
+    "f4.b":"Inventory alerts —","f4.t":"automatic notice when a product is about to run out.",
+    "f5.b":"Income & expense analysis —","f5.t":"a clear view of the business's financial health.",
+    "f6.b":"PDF quote generator —","f6.t":"quotes ready to send to the client.",
+    "f7.b":"AI assistant —","f7.t":"integrated with Groq (LLaMA 3.3 70B) to answer questions about the business in plain language.",
+    "deploy.title":"Deployment",
+    "deploy.p1":"The app is published on Streamlit Cloud, so the end user opens it straight from a link — no Python install, no dependencies.",
+    "side.title":"Project snapshot",
+    "side.type":"Type","side.type_v":"Base / portfolio project",
+    "side.target":"Focus","side.target_v":"Small business & e-commerce",
+    "side.deploy":"Hosting","side.deploy_v":"Streamlit Cloud",
+    "side.role":"My role","side.role_v":"End-to-end design & development",
+    "cta":"Want to automate your business? →",
+    "footer.text":"Made with Python and a lot of coffee · Rodrigo Córdoba (Bc-prime) · Buenos Aires"
+  }
+};
+</script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

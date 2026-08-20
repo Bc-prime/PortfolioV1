@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rodrigo Córdoba — Bc-prime | Python & Automatización</title>
+<meta name="description" content="Portfolio de Rodrigo Córdoba (Bc-prime): desarrollo Python, automatización de negocios y sistemas de gestión a medida.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .hero{padding-top:150px; display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center;}
+  .hero-title{margin:0 0 20px;}
+  .hero p.sub{max-width:520px; margin-bottom:32px; font-size:16px;}
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:44px;}
+  .stat-strip{display:flex; gap:36px; flex-wrap:wrap;}
+  .stat b{display:block; font-family:'IBM Plex Mono',monospace; font-size:22px; color:var(--accent);}
+  .stat span{font-size:12px; color:var(--text-dim);}
+  .hero-art{aspect-ratio:1/1;}
+
+  .about-grid{display:grid; grid-template-columns:.75fr 1.25fr; gap:56px; align-items:start;}
+  .avatar-panel{
+    background:var(--panel); border:1px solid var(--panel-border); border-radius:var(--radius);
+    padding:28px; aspect-ratio:1/1.05; display:flex; flex-direction:column; justify-content:space-between;
+    box-shadow:var(--shadow);
+  }
+  .avatar-mono{font-family:'IBM Plex Mono',monospace; font-size:54px; font-weight:700; color:var(--accent);}
+  .about-text p{margin-bottom:16px; font-size:15.5px;}
+
+  .featured-card{
+    background:var(--panel); border:1px solid var(--panel-border); border-radius:14px;
+    padding:44px; box-shadow:var(--shadow); position:relative; overflow:hidden;
+  }
+  .featured-card::before{
+    content:''; position:absolute; inset:0; opacity:.5; pointer-events:none;
+    background-image: linear-gradient(var(--panel-border) 1px, transparent 1px), linear-gradient(90deg, var(--panel-border) 1px, transparent 1px);
+    background-size:28px 28px;
+    mask-image: radial-gradient(circle at 85% 15%, black, transparent 60%);
+  }
+  .featured-head{margin-bottom:20px; position:relative;}
+  .featured-head p{max-width:560px;}
+  .breaker-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:26px 0 30px; position:relative;}
+  .breaker{
+    background:var(--bg-elevated); border:1px solid var(--panel-border); border-radius:8px;
+    padding:14px; display:flex; flex-direction:column; gap:10px;
+  }
+  .breaker .row{display:flex; justify-content:space-between; align-items:center;}
+  .breaker .led{width:8px;height:8px;border-radius:50%; background:var(--accent-2); box-shadow:0 0 6px var(--accent-2);}
+  .breaker .label{font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600;}
+  .mini-switch{width:34px; height:16px; border-radius:3px; background:var(--accent); position:relative; flex-shrink:0;}
+  .mini-switch::after{content:'';position:absolute; top:2px; right:2px; width:12px; height:12px; border-radius:2px; background:var(--bg-elevated);}
+  .featured-desc{font-size:14px; position:relative; margin-bottom:8px;}
+
+  .projects-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .project-card{
+    background:var(--panel); border:1px solid var(--panel-border); border-radius:12px;
+    padding:26px; display:flex; flex-direction:column; gap:14px; transition:border-color .2s, transform .2s;
+    text-decoration:none;
+  }
+  .project-card:hover{border-color:var(--accent); transform:translateY(-4px);}
+  .project-card .row{display:flex; justify-content:space-between; align-items:center;}
+  .project-card h3{font-size:17px;}
+  .project-card p{font-size:14px;}
+  .led-dot{width:7px;height:7px;border-radius:50%;background:var(--accent-2); flex-shrink:0;}
+  .card-cta{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--accent); margin-top:auto;}
+
+  .stack-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:26px;}
+  .stack-cat{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; color:var(--accent); text-transform:uppercase; margin-bottom:10px;}
+
+  .contact-box{
+    background:var(--panel); border:1px solid var(--panel-border); border-radius:14px;
+    padding:52px; text-align:center; box-shadow:var(--shadow);
+  }
+  .contact-box h2{margin-bottom:14px;}
+  .contact-box p{max-width:460px; margin:0 auto 28px;}
+  .social-row{display:flex; justify-content:center; gap:18px; flex-wrap:wrap; margin-top:30px;}
+  .social-row a{
+    font-family:'IBM Plex Mono',monospace; font-size:13px; text-decoration:none; color:var(--text-dim);
+    border-bottom:1px solid transparent; padding-bottom:2px; transition:color .2s, border-color .2s;
+  }
+  .social-row a:hover{color:var(--accent); border-color:var(--accent);}
+
+  @media (max-width: 880px){
+    .hero{grid-template-columns:1fr; padding-top:130px;}
+    .hero-art{max-width:280px; margin:0 auto;}
+    .about-grid{grid-template-columns:1fr;}
+    .avatar-panel{max-width:220px;}
+    .projects-grid{grid-template-columns:1fr;}
+    .breaker-grid{grid-template-columns:repeat(2,1fr);}
+    .contact-box{padding:32px 20px;}
+    .featured-card{padding:26px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><span class="dot"></span>RC <span style="color:var(--text-dim); font-weight:400;">// Bc-prime</span></a>
+    <nav class="links">
+      <a href="#about" data-i18n="nav.about">Sobre mí</a>
+      <a href="#featured" data-i18n="nav.featured">ElectroManager Pro</a>
+      <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+      <a href="#stack" data-i18n="nav.stack">Stack</a>
+      <a href="#contact" data-i18n="nav.contact">Contacto</a>
+    </nav>
+    <div class="controls">
+      <button class="switch mono" id="theme-switch" data-state="left" aria-label="Cambiar tema claro/oscuro">
+        <span>☾</span><span>☼</span>
+        <span class="knob"></span>
+      </button>
+      <button class="switch mono" id="lang-switch" data-state="left" aria-label="Cambiar idioma">
+        <span>ES</span><span>EN</span>
+        <span class="knob"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div>
+      <p class="eyebrow" data-i18n="hero.eyebrow">DESARROLLADOR PYTHON · AUTOMATIZACIÓN DE NEGOCIOS</p>
+      <h1 class="hero-title" data-i18n="hero.title">Construyo software que le devuelve tiempo a tu negocio.</h1>
+      <p class="sub" data-i18n="hero.sub">Soy Rodrigo Córdoba, conocido en GitHub como Bc-prime. Diseño y programo herramientas a medida —paneles de gestión, optimizadores y bots de automatización— para que dejes de perder horas en tareas repetitivas.</p>
+      <div class="cta-row">
+        <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">Ver proyectos →</a>
+        <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Hablemos</a>
+      </div>
+      <div class="stat-strip">
+        <div class="stat"><b>6</b><span data-i18n="hero.stat1">módulos en ElectroManager Pro</span></div>
+        <div class="stat"><b>7</b><span data-i18n="hero.stat2">herramientas en Business Automation Pack</span></div>
+        <div class="stat"><b>100%</b><span data-i18n="hero.stat3">Python de punta a punta</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <g class="trace-line trace-anim">
+          <path d="M40 60 H180 V150 H320" />
+          <path d="M40 200 H140 V260 H260 V330" />
+          <path d="M320 60 V220 H200" />
+        </g>
+        <circle class="trace-node" cx="40" cy="60" r="5"/>
+        <circle class="trace-node" cx="320" cy="60" r="5"/>
+        <circle class="trace-node" cx="40" cy="200" r="5"/>
+        <circle class="trace-node" cx="260" cy="330" r="5"/>
+        <circle class="trace-node" cx="200" cy="220" r="5"/>
+        <circle class="trace-pulse" cx="180" cy="150" r="6"/>
+        <circle class="trace-pulse" cx="140" cy="260" r="6"/>
+        <rect x="10" y="30" width="60" height="60" rx="8" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
+        <rect x="290" y="30" width="60" height="60" rx="8" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
+        <rect x="10" y="170" width="60" height="60" rx="8" fill="none" stroke="var(--accent-2)" stroke-width="1.5" opacity="0.7"/>
+        <rect x="230" y="300" width="60" height="60" rx="8" fill="none" stroke="var(--accent-2)" stroke-width="1.5" opacity="0.7"/>
+      </svg>
+    </div>
+  </section>
+
+  <div class="divider"><span class="joint"></span></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="avatar-panel">
+        <div class="avatar-mono mono">RC</div>
+        <div>
+          <span class="tag"><span class="led"></span><span data-i18n="about.tag1">Freelancer · Fiverr</span></span>
+          <span class="tag"><span class="led"></span><span data-i18n="about.tag2">Buenos Aires, Argentina</span></span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="eyebrow" data-i18n="about.eyebrow">SOBRE MÍ</p>
+        <h2 data-i18n="about.title" style="margin-bottom:20px;">De autodidacta a automatizar negocios reales</h2>
+        <p data-i18n="about.p1">Empecé a programar por mi cuenta, sin título ni bootcamp, resolviendo problemas reales para clientes en Buenos Aires y en el exterior. Hoy construyo sistemas de gestión, optimizadores de rutas y asistentes con inteligencia artificial que reemplazan planillas, WhatsApp y procesos manuales.</p>
+        <p data-i18n="about.p2">No busco tecnología por la tecnología: busco que el cliente ahorre horas, cobre más rápido y tenga menos dolores de cabeza administrativos. Cada proyecto de este portfolio nació de un problema concreto de un negocio real.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><span class="joint"></span></div>
+
+  <!-- FEATURED PROJECT -->
+  <section id="featured">
+    <div class="featured-card">
+      <div class="featured-head">
+        <p class="eyebrow" data-i18n="featured.eyebrow">PROYECTO DESTACADO</p>
+        <h2 data-i18n="featured.title">ElectroManager Pro</h2>
+      </div>
+      <p class="featured-desc" data-i18n="featured.subtitle">Sistema integral de gestión para un contratista eléctrico comercial y residencial en Florida, EE. UU.</p>
+      <p class="featured-desc" data-i18n="featured.desc">Seis módulos que cubren toda la operación, del primer presupuesto al cierre de obra. El más nuevo, el Blueprint Estimator, lee planos eléctricos y ayuda a contar dispositivos automáticamente para armar cotizaciones en minutos.</p>
+
+      <div class="breaker-grid">
+        <div class="breaker"><div class="row"><span class="label mono" data-i18n="featured.mod1">Presupuestos</span><span class="led"></span></div><div class="mini-switch"></div></div>
+        <div class="breaker"><div class="row"><span class="label mono" data-i18n="featured.mod2">Clientes</span><span class="led"></span></div><div class="mini-switch"></div></div>
+        <div class="breaker"><div class="row"><span class="label mono" data-i18n="featured.mod3">Proyectos</span><span class="led"></span></div><div class="mini-switch"></div></div>
+        <div class="breaker"><div class="row"><span class="label mono" data-i18n="featured.mod4">Inventario</span><span class="led"></span></div><div class="mini-switch"></div></div>
+        <div class="breaker"><div class="row"><span class="label mono" data-i18n="featured.mod5">Facturación</span><span class="led"></span></div><div class="mini-switch"></div></div>
+        <div class="breaker"><div class="row"><span class="label mono" data-i18n="featured.mod6">Blueprint Estimator</span><span class="led"></span></div><div class="mini-switch"></div></div>
+      </div>
+
+      <a href="projects/electromanager-pro.html" class="btn btn-primary" data-i18n="featured.cta">Ver el proyecto completo →</a>
+    </div>
+  </section>
+
+  <div class="divider"><span class="joint"></span></div>
+
+  <!-- OTHER PROJECTS -->
+  <section id="projects">
+    <p class="eyebrow" data-i18n="projects.eyebrow">MÁS TRABAJOS</p>
+    <h2 style="margin-bottom:34px;" data-i18n="projects.title">Otros proyectos</h2>
+    <div class="projects-grid">
+      <a href="projects/business-automation-pack.html" class="project-card">
+        <div class="row"><h3 data-i18n="proj2.title">Business Automation Pack</h3><span class="led-dot"></span></div>
+        <p data-i18n="proj2.desc">Suite de automatización con reportes de Excel automáticos, scraping de precios, alertas de stock y un asistente con IA integrado.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Groq / LLaMA</span><span class="chip">Streamlit Cloud</span></div>
+        <span class="card-cta" data-i18n="card.cta">Ver detalle →</span>
+      </a>
+      <a href="projects/budget-calculator.html" class="project-card">
+        <div class="row"><h3 data-i18n="proj3.title">Budget Calculator</h3><span class="led-dot"></span></div>
+        <p data-i18n="proj3.desc">Herramienta de escritorio para cotizar proyectos con precios basados en valor, con optimización de tiempos asistida por IA.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">CustomTkinter</span><span class="chip">GitHub Actions</span></div>
+        <span class="card-cta" data-i18n="card.cta">Ver detalle →</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="divider"><span class="joint"></span></div>
+
+  <!-- STACK -->
+  <section id="stack">
+    <p class="eyebrow" data-i18n="stack.eyebrow">HERRAMIENTAS</p>
+    <h2 style="margin-bottom:34px;" data-i18n="stack.title">Stack técnico</h2>
+    <div class="stack-grid">
+      <div>
+        <p class="stack-cat" data-i18n="stack.cat1">Lenguaje</p>
+        <div class="chips"><span class="chip">Python</span></div>
+      </div>
+      <div>
+        <p class="stack-cat" data-i18n="stack.cat2">Automatización &amp; datos</p>
+        <div class="chips"><span class="chip">Pandas</span><span class="chip">OR-Tools</span><span class="chip">Web Scraping</span></div>
+      </div>
+      <div>
+        <p class="stack-cat" data-i18n="stack.cat3">Interfaces</p>
+        <div class="chips"><span class="chip">Streamlit</span><span class="chip">CustomTkinter</span></div>
+      </div>
+      <div>
+        <p class="stack-cat" data-i18n="stack.cat4">IA</p>
+        <div class="chips"><span class="chip">Claude API</span><span class="chip">Groq / LLaMA</span></div>
+      </div>
+      <div>
+        <p class="stack-cat" data-i18n="stack.cat5">Infraestructura</p>
+        <div class="chips"><span class="chip">GitHub Actions</span><span class="chip">PyInstaller</span><span class="chip">Railway</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><span class="joint"></span></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-box">
+      <p class="eyebrow" style="justify-content:center;" data-i18n="contact.eyebrow">CONTACTO</p>
+      <h2 data-i18n="contact.title">¿Charlamos sobre tu automatización?</h2>
+      <p data-i18n="contact.sub">Contame qué proceso te está robando tiempo y lo pensamos juntos.</p>
+      <a href="https://linkedin.com/in/cordobars" target="_blank" class="btn btn-primary" data-i18n="contact.cta">Escribime en LinkedIn →</a>
+      <a href="https://github.com/Bc-prime" target="_blank" class="btn btn-primary" data-i18n="contact.cta2">Escribime en GitHub →</a>
+      <a href="mailto:rodsecojobper@gmail.com" class="btn btn-primary" data-i18n="contact.cta3">Escribime un email →</a>
+      <div class="social-row">
+        <a href="https://github.com/Bc-prime" target="_blank">GitHub / Bc-prime</a>
+        <a href="https://linkedin.com/in/cordobars" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span data-i18n="footer.text">Hecho con Python y mucho café · Rodrigo Córdoba (Bc-prime) · Buenos Aires</span>
+</footer>
+
+<script>
+window.I18N = {
+  es: {
+    "nav.about":"Sobre mí","nav.featured":"ElectroManager Pro","nav.projects":"Proyectos","nav.stack":"Stack","nav.contact":"Contacto",
+    "hero.eyebrow":"DESARROLLADOR PYTHON · AUTOMATIZACIÓN DE NEGOCIOS",
+    "hero.title":"Construyo software que le devuelve tiempo a tu negocio.",
+    "hero.sub":"Soy Rodrigo Córdoba, conocido en GitHub como Bc-prime. Diseño y programo herramientas a medida —paneles de gestión, optimizadores y bots de automatización— para que dejes de perder horas en tareas repetitivas.",
+    "hero.cta1":"Ver proyectos →","hero.cta2":"Hablemos",
+    "hero.stat1":"módulos en ElectroManager Pro","hero.stat2":"herramientas en Business Automation Pack","hero.stat3":"Python de punta a punta",
+    "about.eyebrow":"SOBRE MÍ","about.title":"De autodidacta a automatizar negocios reales",
+    "about.p1":"Empecé a programar por mi cuenta, sin título ni bootcamp, resolviendo problemas reales para clientes en Buenos Aires y en el exterior. Hoy construyo sistemas de gestión, optimizadores de rutas y asistentes con inteligencia artificial que reemplazan planillas, WhatsApp y procesos manuales.",
+    "about.p2":"No busco tecnología por la tecnología: busco que el cliente ahorre horas, cobre más rápido y tenga menos dolores de cabeza administrativos. Cada proyecto de este portfolio nació de un problema concreto de un negocio real.",
+    "about.tag1":"Freelancer · Fiverr","about.tag2":"Buenos Aires, Argentina",
+    "featured.eyebrow":"PROYECTO DESTACADO","featured.title":"ElectroManager Pro",
+    "featured.subtitle":"Sistema integral de gestión para un contratista eléctrico comercial y residencial en Florida, EE. UU.",
+    "featured.desc":"Seis módulos que cubren toda la operación, del primer presupuesto al cierre de obra. El más nuevo, el Blueprint Estimator, lee planos eléctricos y ayuda a contar dispositivos automáticamente para armar cotizaciones en minutos.",
+    "featured.mod1":"Presupuestos","featured.mod2":"Clientes","featured.mod3":"Proyectos","featured.mod4":"Inventario","featured.mod5":"Facturación","featured.mod6":"Blueprint Estimator",
+    "featured.cta":"Ver el proyecto completo →",
+    "projects.eyebrow":"MÁS TRABAJOS","projects.title":"Otros proyectos",
+    "proj2.title":"Business Automation Pack","proj2.desc":"Suite de automatización con reportes de Excel automáticos, scraping de precios, alertas de stock y un asistente con IA integrado.",
+    "proj3.title":"Budget Calculator","proj3.desc":"Herramienta de escritorio para cotizar proyectos con precios basados en valor, con optimización de tiempos asistida por IA.",
+    "card.cta":"Ver detalle →",
+    "stack.eyebrow":"HERRAMIENTAS","stack.title":"Stack técnico",
+    "stack.cat1":"Lenguaje","stack.cat2":"Automatización & datos","stack.cat3":"Interfaces","stack.cat4":"IA","stack.cat5":"Infraestructura",
+    "contact.eyebrow":"CONTACTO","contact.title":"¿Charlamos sobre tu automatización?",
+    "contact.sub":"Contame qué proceso te está robando tiempo y lo pensamos juntos.",
+    "contact.cta":"Escribime en LinkedIn →",
+    "contact.cta2":"Escribime en GitHub →",
+    "contact.cta3":"Escribime un email →",
+    "footer.text":"Hecho con Python y mucho café · Rodrigo Córdoba (Bc-prime) · Buenos Aires"
+  },
+  en: {
+    "nav.about":"About","nav.featured":"ElectroManager Pro","nav.projects":"Projects","nav.stack":"Stack","nav.contact":"Contact",
+    "hero.eyebrow":"PYTHON DEVELOPER · BUSINESS AUTOMATION",
+    "hero.title":"I build software that gives your business its time back.",
+    "hero.sub":"I'm Rodrigo Córdoba, known on GitHub as Bc-prime. I design and build custom tools —management dashboards, optimizers and automation bots— so you stop losing hours to repetitive tasks.",
+    "hero.cta1":"View projects →","hero.cta2":"Let's talk",
+    "hero.stat1":"modules in ElectroManager Pro","hero.stat2":"tools in Business Automation Pack","hero.stat3":"Python end to end",
+    "about.eyebrow":"ABOUT ME","about.title":"From self-taught to automating real businesses",
+    "about.p1":"I started coding on my own, with no degree or bootcamp, solving real problems for clients in Buenos Aires and abroad. Today I build management systems, route optimizers and AI assistants that replace spreadsheets, WhatsApp and manual work.",
+    "about.p2":"I'm not chasing technology for its own sake: I want clients to save hours, get paid faster, and deal with less administrative headache. Every project in this portfolio started as a real business problem.",
+    "about.tag1":"Freelancer · Fiverr","about.tag2":"Buenos Aires, Argentina",
+    "featured.eyebrow":"FEATURED PROJECT","featured.title":"ElectroManager Pro",
+    "featured.subtitle":"A complete management system for a commercial and residential electrical contractor in Florida, USA.",
+    "featured.desc":"Six modules covering the whole operation, from the first estimate to closing the job. The newest one, the Blueprint Estimator, reads electrical blueprints and helps count devices automatically to put together quotes in minutes.",
+    "featured.mod1":"Estimates","featured.mod2":"Clients","featured.mod3":"Projects","featured.mod4":"Inventory","featured.mod5":"Invoicing","featured.mod6":"Blueprint Estimator",
+    "featured.cta":"See the full project →",
+    "projects.eyebrow":"MORE WORK","projects.title":"Other projects",
+    "proj2.title":"Business Automation Pack","proj2.desc":"An automation suite with automatic Excel reports, price scraping, stock alerts and a built-in AI assistant.",
+    "proj3.title":"Budget Calculator","proj3.desc":"A desktop tool for quoting projects with value-based pricing and AI-assisted time optimization.",
+    "card.cta":"See detail →",
+    "stack.eyebrow":"TOOLS","stack.title":"Tech stack",
+    "stack.cat1":"Language","stack.cat2":"Automation & data","stack.cat3":"Interfaces","stack.cat4":"AI","stack.cat5":"Infrastructure",
+    "contact.eyebrow":"CONTACT","contact.title":"Want to talk about your automation?",
+    "contact.sub":"Tell me which process is eating up your time and let's figure it out together.",
+    "contact.cta":"Message me on LinkedIn →",
+    "contact.cta2":"Message me on GitHub →",
+    "contact.cta3":"Send me an email →",
+    "footer.text":"Made with Python and a lot of coffee · Rodrigo Córdoba (Bc-prime) · Buenos Aires"
+  }
+};
+</script>
+<script src="assets/app.js"></script>
+
+</body>
+</html>
